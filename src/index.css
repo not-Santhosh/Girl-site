@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+@layer base {
+  html, body, #root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents the browser from scrolling away from your app */
+  touch-action: none; /* Tells the browser: "I will handle the touch myself" */
+}
+}
+body {
+  background: linear-gradient(to bottom, #e0f2fe, #c7d2fe, #6366f1);
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 22px;
+  color: #4338ca;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffe4e6; /* light pink background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f43f5e; /* rose / pink scroll */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48; /* darker rose on hover */
+}
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #e91e63;
+  color: white;
+  cursor: pointer;
+}
+
+.thread {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.silhouette {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: black;
+  opacity: 0.05;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: breathe 4s infinite ease-in-out;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
