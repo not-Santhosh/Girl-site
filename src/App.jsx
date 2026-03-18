@@ -59,7 +59,7 @@ const stages = [
 
 const SlotTitle = () => {
   const text = "Happy Women’s Day, My Girl🤍";
-  const chars = "SHIVANANDHINISHIVANANDHINI";
+  const chars = import.meta.env.VITE_PERSON_NAME;
   const [display, setDisplay] = useState("");
 
   useEffect(() => {
